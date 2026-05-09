@@ -29,7 +29,7 @@ export default function Home() {
       if (d.error) throw new Error(d.error);
       setResult(d);
     } catch (e) {
-      setError(e.message);
+      setError(e instanceof Error ? e.message : 'Erreur');
     } finally {
       setLoading(false);
     }
@@ -160,4 +160,5 @@ export default function Home() {
     </main>
   );
 }
+
 
