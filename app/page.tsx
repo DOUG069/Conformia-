@@ -15,7 +15,7 @@ export default function Home() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [dragging, setDragging] = useState(false);
-  const t = T[lang];
+  const t = T[lang as keyof typeof T];
   async function analyser() {
     if (!file) return;
     setLoading(true);
@@ -160,3 +160,4 @@ export default function Home() {
     </main>
   );
 }
+
